@@ -16,7 +16,6 @@
                 +navbar-inverse: Lớp này tạo ra một thanh điều hướng có nền tối và chữ sáng
                 +navbar-fixed-top: Lớp này giữ cho thanh điều hướng luôn nằm ở phía trên cùng-->
                 @{ Html.RenderAction("NavarLogo", "Category");}
-                hello
             </div>
         </div>
     </div>
@@ -29,11 +28,11 @@
             </button>
             <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
                 <ul class="navbar-nav flex-grow-1">
-                    <li>@Html.ActionLink("Trang chủ", "ProductList", "Products", new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Sản phẩm", "Index", "Products", new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Loại SP", "Index", "Category", new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Khách hàng", "Index", "Customers", new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Đơn hàng", "Index", "OrderProes", new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Trang chủ", "ProductList", "Products", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Sản phẩm", "Index", "Products", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Loại SP", "Index", "Category", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Khách hàng", "Index", "Customers", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Đơn hàng", "Index", "OrderProes", new { area = "" }, new { @class = "nav-link" })</li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
