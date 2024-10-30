@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <!-- Thêm logo PNJ
+                +navbar: Đây là lớp CSS chính của Bootstrap để định dạng thanh điều hướng. Nó áp dụng các kiểu dáng cơ bản cho thanh điều hướng.
+                +navbar-inverse: Lớp này tạo ra một thanh điều hướng có nền tối và chữ sáng
+                +navbar-fixed-top: Lớp này giữ cho thanh điều hướng luôn nằm ở phía trên cùng-->
+                @{ Html.RenderAction("NavarLogo", "Category");}
+
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+        <div class="container">
+            @Html.ActionLink("VNK", "ShowProducts", "Products", new { area = "" }, new { @class = "navbar-brand" })
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li>@Html.ActionLink("Trang chủ", "ProductList", "Products", new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Sản phẩm", "Index", "Products", new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Loại SP", "Index", "Category", new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Khách hàng", "Index", "Customers", new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Đơn hàng", "Index", "OrderProes", new { @class = "nav-link" })</li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        @Html.Action("BagCart", "ShoppingCart")
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid body-content">
+
+        @{ Html.RenderAction("CategoryPartial", "Category");}
+
+        @RenderBody()
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+    </div>
+    <div style="background-color:black; height: 50px; text-align: center; padding: 10px;">
+        <h4 style="color:yellow;">
+            <b>
+                &copy; @DateTime.Now.Year - Đề tài môn học LẬP TRÌNH
+                WEB
+            </b>
+        </h4>
+    </div>
+</body>
+
+</html>
